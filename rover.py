@@ -1,16 +1,26 @@
 import numpy
 import math
 
+################################################
+#  class that holds info on rovers             #
+#  holds position and orientation of rovers    #
+#  and string that contains rover's moves.     #
+#  moves are stored as a string, but they are  #
+#  checked before the rover is made            #
+################################################
+
 def rotationMatrix(theta):
 	return (numpy.matrix([[int(numpy.cos(theta)), -int(numpy.sin(theta))],[int(numpy.sin(theta)), int(numpy.cos(theta))]]))
 
 class rover:
 	leftRotMatrix = rotationMatrix(-math.pi/2)
 	rightRotMatrix = rotationMatrix(math.pi/2)
-	directions = {(0,1): 'N', (1,0): 'E', (0,-1): 'S', (-1,0): 'W'}
-	def __init__(self,i,j, d):
+
+	#takes as input coordinates of rover (i,j) , tuple of direction
+	def __init__(self,i,j, d, s):
 		self.pos=numpy.matrix([i,j])
-		self.ori=numpy.matrix([0,1])
+		self.ori=numpy.matrix(d)
+		self.moves = s
 	def peekForward(self):
 		return (self.pos+self.ori)
 	def moveForward(self):
@@ -23,8 +33,6 @@ class rover:
 		return self.pos.item(0)
 	def getY(self):
 		return self.pos.item(1)
-	def getDirection(self):
-		dirTuple=(self.ori.item(0), self.ori.item(1))
-		return self.directions[dirTuple]
-	def printRover(self):
-		print('{} {} {}'.format(self.pos.item(0),self.pos.item(1),self.getDirection()))
+	def getOri(self):
+		return self.ori
+
