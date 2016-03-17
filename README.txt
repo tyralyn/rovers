@@ -3,7 +3,15 @@ README
 ==================================
 
 BUILD/RUN INFO
+required packages:
+ * re
+ * numpy
+ * math
+ * sys
 
+ To run, call 
+
+ python __init__.py
 
 ==================================
 

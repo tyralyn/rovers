@@ -6,7 +6,12 @@ def main():
 	p=None
 	message = sys.stdin.readlines()
 	#handle first line of input
-	inp = message[0]
+	inp =""
+	try: 
+		inp = message[0]
+	except IndexError:
+		print(errorstrings.emptyFileError)
+		return
 	inpList = inp.split()
 	if len(inpList)!=2:
 		print(errorstrings.plateauDeclarationError.format(0))
