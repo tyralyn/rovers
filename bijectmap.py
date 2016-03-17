@@ -1,3 +1,17 @@
+##################################################
+#                                                #
+#   class that acts as  a  bijective map.        #
+#   purpose is to provide easy mapping           #
+#   for orientation tuples and string values     #
+#   for rover direction. by definition of        #
+#   bijection, an element of the domain (e.g.    #
+#   orientation tuple) can only be mapped to     # 
+#   one element of range (e.g. orientation       #
+#   string value) and vice-versa. The remove     # 
+#   and add functions reflect this property.     #
+#                                                #
+##################################################
+
 class bijectmap:
 	def __init__(self):
 		self.map1={}
