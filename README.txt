@@ -19,7 +19,7 @@ ASSUMPTIONS:
 
 The following assumptions are made:
 
-That two multiple rovers can occupy the same space/coordinate. 
+That two multiple rovers cannot occupy the same space/coordinate. If two rovers are initialized to the same initial coordinate, only one will be added. 
 
 That a rover will not fall off the edge of the plateau. It can be at the edge of the plateau, but will not fall off and will instead stay in the same place until a valid move (one that doesn't result in it falling off the plateau) is made. 
 
