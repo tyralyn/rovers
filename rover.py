@@ -11,12 +11,9 @@ import math
 #                                                #
 ##################################################
 
-def rotationMatrix(theta):
-	return (numpy.matrix([[int(numpy.cos(theta)), -int(numpy.sin(theta))],[int(numpy.sin(theta)), int(numpy.cos(theta))]]))
-
 class rover:
-	leftRotMatrix = rotationMatrix(-math.pi/2)
-	rightRotMatrix = rotationMatrix(math.pi/2)
+	leftRotMatrix = (numpy.matrix([[int(numpy.cos(-math.pi/2)), -int(numpy.sin(-math.pi/2))],[int(numpy.sin(-math.pi/2)), int(numpy.cos(-math.pi/2))]])) 
+	rightRotMatrix = (numpy.matrix([[int(numpy.cos(math.pi/2)), -int(numpy.sin(math.pi/2))],[int(numpy.sin(math.pi/2)), int(numpy.cos(math.pi/2))]])) 
 
 	#takes as input coordinates of rover (i,j) , tuple of direction, and string of moves
 	def __init__(self,xCoord,yCoord,orientation,moves):
@@ -33,11 +30,9 @@ class rover:
 	#maintains orientation of rover, but moves it forward
 	def moveForward(self):
 		self.pos=self.pos+self.ori
-
 	#modify the orientation of the rover to turn it left
 	def turnLeft(self):
 		self.ori=self.ori*self.leftRotMatrix
-
 	#modify the orientation of the rover to turn it right	
 	def turnRight(self):
 		self.ori=self.ori*self.rightRotMatrix

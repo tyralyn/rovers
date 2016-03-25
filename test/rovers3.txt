@@ -1,0 +1,4 @@
+5 5
+1 1 E
+LMLMLMLMLMLM
+3 4 
